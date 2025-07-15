@@ -7,10 +7,10 @@ body {
 }
 
 header {
-  background: #2b2b2b;
-  color: #fff;
-  padding: 2rem;
+  background-color: #007BFF; /* or just 'blue' */
+  color: white;
   text-align: center;
+  padding: 2rem;
 }
 
 main {
