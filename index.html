@@ -86,7 +86,58 @@
         <li>✅ Simple process, fast communication</li>
         <li>✅ Dispute handling available</li>
       </ul>
-    </section>
+    </section
+
+      <section id="reviews">
+  <h2>What Clients Say</h2>
+
+  <div class="review">
+    <p>“Быстро, честно и абсолютно надёжно. Это единственный эскроу-сервис, которым я когда-либо воспользуюсь.”</p>
+    <strong>– Alex G., NFT trader</strong>
+  </div>
+
+  <div class="review">
+    <p>“Used Trust Hold Pay for a $3,000 service deal. Everything went smooth!”</p>
+    <strong>– Ella M., freelancer</strong>
+  </div>
+
+  <div class="review">
+    <p>“Professional communication and fair resolution in a dispute. 10/10.”</p>
+    <strong>– CryptoSwap Marketplace</strong>
+  </div>
+</section>
+
+<section id="fee-calculator">
+  <h2>Escrow Fee Calculator</h2>
+  <p>Enter your transaction amount to estimate the escrow fee:</p>
+  <input type="number" id="amount" placeholder="Enter amount in USD" style="padding:0.5rem; width:200px;"/>
+  <button onclick="calculateFee()" style="padding:0.5rem 1rem; margin-left:10px;">Calculate</button>
+  <p id="result" style="margin-top:1rem; font-weight:bold;"></p>
+</section>
+
+<script>
+  function calculateFee() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    if (isNaN(amount) || amount <= 0) {
+      document.getElementById('result').innerText = "Please enter a valid amount.";
+      return;
+    }
+
+    let rate = 0;
+    if (amount < 1000) {
+      rate = 0.03;
+    } else if (amount < 5000) {
+      rate = 0.02;
+    } else {
+      rate = 0.01;
+    }
+
+    let fee = amount * rate;
+    if (fee < 20) fee = 20;
+
+    document.getElementById('result').innerText = `Estimated escrow fee: $${fee.toFixed(2)} (${(fee / amount * 100).toFixed(2)}%)`;
+  }
+</script>
 
     <section id="contact">
       <h2>Contact Us to Start a Deal</h2>
@@ -96,6 +147,31 @@
       </div>
     </section>
   </main>
+
+  <section id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What is escrow?</summary>
+    <p>Escrow is a secure third-party service that holds funds until both buyer and seller fulfill their agreement.</p>
+  </details>
+
+  <details>
+    <summary>How long does it take?</summary>
+    <p>Once both parties agree, we can hold and release funds within minutes or hours depending on the deal.</p>
+  </details>
+
+  <details>
+    <summary>What if there's a dispute?</summary>
+    <p>We review the evidence provided by both parties and release funds fairly, or bring in an arbitrator for complex cases.</p>
+  </details>
+
+  <details>
+    <summary>What payment methods do you accept?</summary>
+    <p>We support major crypto wallets and bank transfers. Details are shared individually per transaction.</p>
+  </details>
+</section>
+
 
   <footer>
     <p>
