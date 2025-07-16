@@ -55,3 +55,20 @@ footer {
   color: #fff;
   text-decoration: underline;
 }
+
+#faq {
+  margin-top: 3rem;
+}
+#faq details {
+  background: #f4f8fc;
+  border: 1px solid #ccd;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+#faq summary {
+  font-weight: bold;
+  color: #0047AB;
+  margin-bottom: 0.5rem;
+}
